@@ -98,15 +98,137 @@ function handleKegiatanForm() {
     });
 }
 
+/**
+ * Fungsi untuk menangani validasi form kontak.
+ */
+function handleContactForm() {
+    const form = document.getElementById('contactForm');
+    if (!form) return;
 
-// Inisialisasi AOS (Animasi Scroll) - Placeholder/Simulasi
-function initAOS() {
-    console.log("Simulasi: AOS diinisialisasi. Jika Anda menggunakan library AOS, panggil AOS.init() di sini.");
+    form.addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+        const feedbackElement = document.getElementById('feedbackMessage');
+        let isValid = true;
+        let errorMessage = '';
+
+        // Reset feedback
+        feedbackElement.style.display = 'none';
+        feedbackElement.className = 'feedback-message';
+        
+        // Validasi sederhana
+        const nama = form.elements['nama'].value.trim();
+        const email = form.elements['email'].value.trim();
+        const pesan = form.elements['pesan'].value.trim();
+        const privacyChecked = form.elements['privacy'].checked;
+        const prioritasSelected = form.elements['prioritas'].value;
+        
+        if (nama === '' || email === '' || pesan === '' || prioritasSelected === '') {
+            errorMessage = 'Semua kolom bertanda bintang (*) wajib diisi.';
+            isValid = false;
+        } else if (!email.includes('@') || !email.includes('.')) {
+            errorMessage = 'Format email tidak valid.';
+            isValid = false;
+        } else if (pesan.length < 10) {
+            errorMessage = 'Pesan terlalu pendek (minimal 10 karakter).';
+            isValid = false;
+        } else if (!privacyChecked) {
+             errorMessage = 'Anda harus menyetujui kebijakan privasi.';
+             isValid = false;
+        }
+        
+        // Feedback ke pengguna
+        if (isValid) {
+            console.log("Data Terkirim:", {
+                nama: nama,
+                email: email,
+                subjek: form.elements['subjek'].value,
+                prioritas: prioritasSelected,
+                pesan: pesan
+            });
+            
+            feedbackElement.textContent = 'Pesan Anda berhasil dikirim! Kami akan segera merespons.';
+            feedbackElement.classList.add('success');
+            feedbackElement.style.display = 'block';
+            form.reset();
+        } else {
+            feedbackElement.textContent = 'Gagal mengirim pesan: ' + errorMessage;
+            feedbackElement.classList.add('error');
+            feedbackElement.style.display = 'block';
+        }
+    });
 }
 
-// Inisialisasi Swiper (Slider Testimoni) - Placeholder/Simulasi
+
+// Inisialisasi AOS (Animasi Scroll)
+function initAOS() {
+    AOS.init({
+        duration: 1000,
+        easing: 'ease-in-out',
+        once: true,
+        mirror: false
+    });
+}
+
+// Inisialisasi Swiper (Slider Testimoni)
 function initSwiper() {
-    console.log("Simulasi: Swiper diinisialisasi. Jika Anda menggunakan library Swiper, panggil new Swiper() di sini.");
+    const swiperEl = document.querySelector('.swiper-container');
+    if (!swiperEl) return;
+    new Swiper(swiperEl, {
+        speed: 600,
+        loop: true,
+        autoplay: {
+            delay: 5000,
+            disableOnInteraction: false
+        },
+        slidesPerView: 'auto',
+        pagination: {
+            el: '.swiper-pagination',
+            type: 'bullets',
+            clickable: true
+        },
+        breakpoints: {
+            320: {
+                slidesPerView: 1,
+                spaceBetween: 20
+            },
+            1200: {
+                slidesPerView: 3,
+                spaceBetween: 20
+            }
+        }
+    });
+}
+
+// Inisialisasi Glightbox (Galeri Lightbox)
+function initGlightbox() {
+    const lightbox = GLightbox({
+        selector: '.glightbox'
+    });
+}
+
+// Inisialisasi Isotope (Filter Galeri)
+function initIsotope() {
+    const galeriContainer = document.querySelector('.galeri-grid');
+    if (!galeriContainer) return;
+
+    const iso = new Isotope(galeriContainer, {
+        itemSelector: '.galeri-item',
+        layoutMode: 'fitRows'
+    });
+
+    const filterButtons = document.querySelectorAll('.galeri-filter button');
+    filterButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            // Hapus kelas aktif dari semua tombol
+            filterButtons.forEach(btn => btn.classList.remove('active'));
+            // Tambahkan kelas aktif ke tombol yang diklik
+            button.classList.add('active');
+            
+            const filterValue = button.getAttribute('data-filter');
+            iso.arrange({ filter: filterValue });
+        });
+    });
 }
 
 
@@ -121,12 +243,16 @@ window.onload = function() {
         mobileNavToggle.addEventListener('click', handleMobileNav);
     }
     
-    // 3. Event Handling untuk form kegiatan
+    // 3. Event Handling untuk form-form
     handleKegiatanForm();
+    handleContactForm();
 
-    // 4. Inisialisasi Library (Simulasi/Placeholder)
+    // 4. Inisialisasi Library
     initAOS();
     initSwiper();
+    initGlightbox();
+    initIsotope();
+
 
     // 5. Back to Top Click Handling
     if (backToTopButton) {
