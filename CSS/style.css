@@ -1,0 +1,568 @@
+/*
+ * File: assets/css/style.css
+ * Fungsi: Mengatur tampilan khusus PERMAI-AYU (sesuai instruksi 11)
+ * Menerapkan Box Model, Flexbox/Grid, dan Responsif Dasar (sesuai kriteria UTS)
+ * Versi 2.0: Tampilan lebih nyaman dan modern
+ */
+
+:root {
+    --primary-color: #0D47A1; /* Biru Indigo Gelap */
+    --primary-highlight: #42A5F5; /* Biru Cerah untuk highlight */
+    --secondary-color: #546E7A; /* Abu-abu Kebiruan */
+    --text-color: #212121; /* Hitam yang lebih lembut */
+    --background-light: #F8F9FA;
+    --font-family: 'Inter', sans-serif;
+    --border-radius: 12px; /* Radius lebih besar untuk tampilan lebih lembut */
+    --padding-section: 70px 0;
+    --transition-speed: 0.4s;
+}
+
+/* 1. Global Reset & Typography */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth; /* Scrolling mulus */
+}
+
+body {
+    font-family: var(--font-family);
+    color: var(--text-color);
+    background-color: #ffffff;
+    line-height: 1.7; /* Sedikit lebih lega */
+}
+
+h1, h2, h3, h4 {
+    font-weight: 700;
+    line-height: 1.3;
+    color: #1a237e; /* Warna judul yang lebih gelap dan berkarakter */
+    letter-spacing: 0.5px; /* Spasi antar huruf */
+}
+
+a {
+    color: var(--primary-highlight);
+    text-decoration: none;
+    transition: color var(--transition-speed) ease;
+}
+
+a:hover {
+    color: var(--primary-color);
+}
+
+/* Layout Utilities */
+.container-header, .container-hero, .container-content, .container-footer, .container-grid {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+.section-padding {
+    padding: var(--padding-section);
+}
+
+.bg-light {
+    background-color: var(--background-light);
+}
+
+.text-center {
+    text-align: center;
+}
+
+/* 2. Header & Navigation (Flexbox) */
+#header {
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(10px); /* Efek glassmorphism */
+    padding: 15px 0;
+    border-bottom: 1px solid #e0e0e0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    transition: all 0.3s ease;
+}
+
+#header.header-scrolled {
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.08);
+}
+
+.container-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo a {
+    font-size: 28px;
+    font-weight: 800;
+    color: var(--primary-color);
+}
+
+.navbar ul {
+    list-style: none;
+    display: flex;
+    gap: 30px; /* Spasi lebih */
+}
+
+.navbar a {
+    display: block;
+    padding: 10px 0;
+    font-weight: 600;
+    color: var(--text-color);
+    position: relative;
+    border-bottom: 2px solid transparent; /* Garis bawah transparan */
+    transition: color 0.3s, border-bottom-color 0.3s;
+}
+
+.navbar a::before {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -2px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: var(--primary-highlight);
+    transition: width 0.3s ease;
+}
+
+.navbar a:hover::before, .navbar a.active::before {
+    width: 100%;
+}
+
+.navbar a:hover, .navbar a.active {
+    color: var(--primary-color);
+    border-bottom-color: transparent;
+}
+
+
+.mobile-nav-toggle {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: var(--text-color);
+}
+
+/* 3. Hero Section (Flexbox) */
+#hero {
+    background: linear-gradient(45deg, rgba(13, 71, 161, 0.7), rgba(66, 165, 245, 0.5)), url('https://placehold.co/1920x800/1a237e/ffffff?text=PERMAI-AYU');
+    background-size: cover;
+    background-position: center;
+    min-height: 80vh;
+    display: flex;
+    align-items: center;
+    text-align: center;
+}
+
+.hero-content {
+    color: #fff;
+    padding: 20px;
+}
+
+.hero-content h2 {
+    font-size: clamp(2.2rem, 5vw, 4rem);
+    margin-bottom: 15px;
+    color: #fff;
+    text-shadow: 1px 1px 5px rgba(0,0,0,0.2);
+}
+
+.hero-content p {
+    font-size: clamp(1rem, 2vw, 1.3rem);
+    margin-bottom: 40px;
+    opacity: 0.95;
+}
+
+.hero-cta a {
+    padding: 14px 35px;
+    margin: 0 10px;
+    border-radius: 50px;
+    font-weight: 700;
+    transition: all 0.3s ease;
+}
+
+.btn-primary {
+    background-color: var(--primary-highlight);
+    color: #fff;
+    border: 2px solid var(--primary-highlight);
+}
+
+.btn-primary:hover {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+    transform: scale(1.05);
+}
+
+.btn-secondary {
+    background-color: transparent;
+    color: #fff;
+    border: 2px solid #fff;
+}
+
+.btn-secondary:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    transform: scale(1.05);
+}
+
+/* 4. Section Titles */
+.section-title {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    position: relative;
+    padding-bottom: 20px;
+    color: var(--primary-color);
+    text-align: center;
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    display: block;
+    width: 80px;
+    height: 4px;
+    background: var(--primary-highlight);
+    border-radius: 2px;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.section-subtitle {
+    font-size: 1.1rem;
+    color: var(--secondary-color);
+    margin-bottom: 50px;
+    text-align: center;
+}
+
+/* 5. About Preview (CSS Grid) */
+.container-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+    align-items: center;
+}
+
+.about-content h3 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+.about-content ul {
+    list-style: none;
+    margin-top: 20px;
+}
+
+.about-content li {
+    padding: 10px 0;
+    display: flex;
+    align-items: center;
+    font-size: 1.1rem;
+}
+
+.about-content .icon {
+    margin-right: 15px;
+    color: var(--primary-highlight);
+    font-size: 1.2rem;
+}
+
+.responsive-img {
+    max-width: 100%;
+    height: auto;
+    border-radius: var(--border-radius);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+/* 6. Departemen Grid (CSS Grid) */
+.departments-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+}
+
+.dept-card {
+    background: #fff;
+    padding: 30px;
+    border-radius: var(--border-radius);
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.04), 0 1px 3px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.dept-card:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08), 0 4px 8px rgba(0, 0, 0, 0.06);
+}
+
+.dept-card .icon {
+    font-size: 3.5rem;
+    color: var(--primary-color);
+    margin-bottom: 20px;
+    display: block;
+}
+
+.link-more {
+    display: inline-block;
+    margin-top: 15px;
+    font-weight: 600;
+}
+
+/* 7. Activity Grid (CSS Grid) */
+.activity-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.activity-card {
+    background: #fff;
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.activity-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.12);
+}
+
+.activity-card img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+}
+
+.activity-card .card-body {
+    padding: 25px;
+}
+
+.activity-card h4 {
+    font-size: 1.4rem;
+    margin-bottom: 8px;
+    color: var(--primary-color);
+}
+
+.activity-card time {
+    display: block;
+    font-size: 0.9rem;
+    color: var(--secondary-color);
+    margin-bottom: 15px;
+}
+
+/* 8. Testimonials */
+.testimonial-card {
+    background: #fff;
+    padding: 35px;
+    border-radius: var(--border-radius);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    min-height: 220px;
+    flex-shrink: 0;
+    width: 100%;
+}
+
+.testimonial-card p {
+    font-style: italic;
+    font-size: 1.1rem;
+    margin-bottom: 25px;
+    color: #555;
+}
+
+.testimonial-footer {
+    display: flex;
+    align-items: center;
+}
+
+.testimonial-img {
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 15px;
+}
+
+.testimonial-name {
+    font-weight: 700;
+    margin: 0;
+    font-size: 1.1rem;
+}
+
+.testimonial-role {
+    display: block;
+    font-size: 0.9rem;
+    color: var(--secondary-color);
+}
+
+/* FIX: Clean horizontal scroll for testimonials without JS */
+.swiper-wrapper {
+    display: flex;
+    overflow-x: auto;
+    gap: 20px;
+    padding-bottom: 20px; /* Ruang untuk scrollbar */
+    scrollbar-width: thin; /* Firefox */
+    scrollbar-color: var(--primary-highlight) var(--background-light); /* Firefox */
+}
+
+/* Webkit (Chrome, Safari) scrollbar styling */
+.swiper-wrapper::-webkit-scrollbar {
+    height: 8px;
+}
+
+.swiper-wrapper::-webkit-scrollbar-track {
+    background: var(--background-light);
+    border-radius: 10px;
+}
+
+.swiper-wrapper::-webkit-scrollbar-thumb {
+    background-color: var(--primary-highlight);
+    border-radius: 10px;
+    border: 2px solid var(--background-light);
+}
+
+.swiper-slide {
+    flex: 0 0 90%; /* Setiap slide akan memakan 90% dari container */
+    max-width: 400px; /* Batas lebar maksimum per slide */
+}
+
+
+/* 9. Footer */
+#footer {
+    background-color: #1a237e; /* Darker blue for footer */
+    color: rgba(255, 255, 255, 0.8);
+    padding: 50px 0 20px 0;
+    font-size: 15px;
+}
+
+.container-footer {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    margin-bottom: 40px;
+}
+
+#footer h4 {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 20px;
+}
+
+#footer ul {
+    list-style: none;
+}
+
+#footer a {
+    color: rgba(255, 255, 255, 0.7);
+    transition: color 0.3s;
+}
+
+#footer a:hover {
+    color: #fff;
+}
+
+.copyright {
+    text-align: center;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    color: rgba(255, 255, 255, 0.6);
+}
+
+/* 10. Back to Top Button */
+.back-to-top {
+    position: fixed;
+    visibility: hidden;
+    opacity: 0;
+    right: 20px;
+    bottom: 20px;
+    z-index: 996;
+    background: var(--primary-highlight);
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    transition: all 0.4s;
+    color: #fff;
+    font-size: 24px;
+    line-height: 44px;
+    text-align: center;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+}
+
+.back-to-top.active {
+    visibility: visible;
+    opacity: 1;
+}
+
+/* 11. Responsif Dasar (Media Query) */
+@media (max-width: 992px) {
+    .container-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .about-image {
+        order: -1;
+    }
+
+    .container-header {
+        flex-wrap: wrap;
+    }
+    
+    .navbar {
+        display: none;
+        width: 100%;
+        order: 1;
+        background: #fff;
+        box-shadow: 0 10px 15px rgba(0,0,0,0.05);
+        border-radius: 0 0 var(--border-radius) var(--border-radius);
+    }
+    
+    .navbar ul {
+        flex-direction: column;
+        gap: 0;
+        margin-top: 10px;
+    }
+
+    .navbar a {
+        padding: 15px;
+        border-bottom: 1px solid #f0f0f0;
+    }
+    
+    .navbar a::before {
+        display: none; /* Sembunyikan efek hover garis di mobile */
+    }
+
+    .mobile-nav-toggle {
+        display: block;
+    }
+
+    .mobile-nav-active .navbar {
+        display: block; 
+    }
+
+    .hero-content h2 {
+        font-size: 2.8rem;
+    }
+
+    .hero-cta {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .hero-cta a {
+        margin: 0;
+    }
+}
+
+@media (max-width: 576px) {
+    .hero-content h2 {
+        font-size: 2.2rem;
+    }
+    .section-padding {
+        padding: 50px 0;
+    }
+    .section-title {
+        font-size: 2rem;
+    }
+}

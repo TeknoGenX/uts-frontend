@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Struktur Organisasi | PERMAI-AYU</title>
+    <!-- Font Inter dari Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="CSS/style.css">
+    <!-- Placeholder untuk library AOS - Sesuai instruksi 9 & 10 -->
+    <!-- <link rel="stylesheet" href="assets/vendor/aos/aos.css"> -->
+</head>
+<body>
+
+    <!-- HEADER: Replikasi Header -->
+    <header id="header">
+        <div class="container-header">
+            <h1 class="logo"><a href="index.html">PERMAI-AYU</a></h1>
+            
+            <nav id="navbar" class="navbar">
+                <ul>
+                    <li><a href="index.html">Beranda</a></li>
+                    <li><a href="about.html">Tentang</a></li>
+                    <li><a href="struktur.html" class="active">Struktur</a></li>
+                    <li><a href="departments.html">Departemen</a></li>
+                    <li><a href="kegiatan.html">Kegiatan</a></li>
+                    <li><a href="contact.html">Kontak</a></li>
+                </ul>
+                <button class="mobile-nav-toggle" aria-label="Toggle Navigation">☰</button>
+            </nav>
+        </div>
+    </header>
+
+    <!-- MAIN: Konten Utama Halaman Struktur -->
+    <main id="main">
+        
+        <!-- SECTION 1: Page Hero -->
+        <section id="page-hero" class="bg-light section-padding" style="padding-top: 100px; padding-bottom: 30px;">
+            <div class="container-content text-center" data-aos="fade-down">
+                <h1>Bagan Struktur Organisasi 2024-2025</h1>
+                <p class="section-subtitle">Memahami hierarki dan alur kerja PERMAI-AYU.</p>
+            </div>
+        </section>
+
+        <!-- SECTION 2: Bagan Struktur (Menggunakan CSS Grid untuk Layout Hierarki) -->
+        <section id="org-chart" class="section-padding">
+            <div class="container-content">
+                
+                <!-- LEVEL 1: Ketua Umum -->
+                <div class="level-1 org-level" data-aos="fade-down">
+                    <div class="org-unit ketua-umum">
+                        <img src="https://placehold.co/100x100/A0522D/ffffff?text=KU" alt="Foto Ketua Umum" class="member-photo">
+                        <h4>Muhamad Sam'un Mundzir</h4>
+                        <span class="member-role">Ketua Umum</span>
+                        <p class="member-info">Pemimpin tertinggi organisasi, bertanggung jawab atas visi dan misi.</p>
+                    </div>
+                </div>
+                
+                <!-- LEVEL 2: Inti Organisasi (Sekretaris & Bendahara) -->
+                <div class="level-2 org-level" data-aos="fade-up" data-aos-delay="200">
+                    <div class="org-core-grid">
+                        <div class="org-unit inti-1">
+                            <img src="https://placehold.co/100x100/2F4F4F/ffffff?text=SEK" alt="Foto Sekretaris" class="member-photo">
+                            <h4>Alfin Auliya Nur</h4>
+                            <span class="member-role">Sekretaris Umum</span>
+                            <p class="member-info">Mengelola administrasi dan kesekretariatan.</p>
+                        </div>
+                        <div class="org-unit inti-2">
+                            <img src="https://placehold.co/100x100/808000/ffffff?text=BEN" alt="Foto Bendahara" class="member-photo">
+                            <h4>Sami Al Hatimi</h4>
+                            <span class="member-role">Bendahara Umum</span>
+                            <p class="member-info">Bertanggung jawab atas manajemen finansial.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- LEVEL 3: Departemen (Menggunakan CSS Grid) -->
+                <div class="level-3 org-level" data-aos="fade-up" data-aos-delay="400">
+                    <h3 class="section-subtitle">Kepala Departemen</h3>
+                    <div class="org-dept-grid">
+                        <div class="org-unit dept-card">
+                            <img src="https://placehold.co/80x80/007BFF/ffffff?text=MK" alt="Foto Dept Manajemen & Kaderisasi" class="member-photo">
+                            <h4>Manajemen & Kaderisasi</h4>
+                            <span class="member-role">Nabil Afkari Pratama</span>
+                        </div>
+                        <div class="org-unit dept-card">
+                            <img src="https://placehold.co/80x80/28A745/ffffff?text=JK" alt="Foto Dept Jaringan dan Kolaborasi" class="member-photo">
+                            <h4>Jaringan dan Kolaborasi</h4>
+                            <span class="member-role">Faridhuzzaman</span>
+                        </div>
+                        <div class="org-unit dept-card">
+                            <img src="https://placehold.co/80x80/FFC107/333333?text=KD" alt="Foto Dept Kedaerahan" class="member-photo">
+                            <h4>Kedaerahan</h4>
+                            <span class="member-role">Alvinur Sulton</span>
+                        </div>
+                        <div class="org-unit dept-card">
+                            <img src="https://placehold.co/80x80/DC3545/ffffff?text=KSA" alt="Foto Dept Kajian Strategis dan Advokasi" class="member-photo">
+                            <h4>Kajian Strategis dan Advokasi</h4>
+                            <span class="member-role">Ahmad Nabil Fayyadh</span>
+                        </div>
+                        <div class="org-unit dept-card">
+                            <img src="https://placehold.co/80x80/6f42c1/ffffff?text=KW" alt="Foto Dept Kewirausahaan" class="member-photo">
+                            <h4>Kewirausahaan</h4>
+                            <span class="member-role">Widia Sulistiani</span>
+                        </div>
+                        <div class="org-unit dept-card">
+                            <img src="https://placehold.co/80x80/fd7e14/ffffff?text=KD" alt="Foto Dept Komunikasi dan Digitalisasi" class="member-photo">
+                            <h4>Komunikasi dan Digitalisasi</h4>
+                            <span class="member-role">Dwi Diah Fadilah</span>
+                        </div>
+                        <div class="org-unit dept-card">
+                            <img src="https://placehold.co/80x80/20c997/ffffff?text=OSB" alt="Foto Dept Olahraga, Seni dan Budaya" class="member-photo">
+                            <h4>Olahraga, Seni dan Budaya</h4>
+                            <span class="member-role">Sukma Gilang Prasetyo</span>
+                        </div>
+                        <div class="org-unit dept-card">
+                            <img src="https://placehold.co/80x80/6610f2/ffffff?text=AS" alt="Foto Dept Asrama" class="member-photo">
+                            <h4>Asrama</h4>
+                            <span class="member-role">Muhammad Fauzus Sa'id</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Keterangan -->
+                <div class="keterangan-struktur" data-aos="fade-up" data-aos-delay="600">
+                    <p>Bagan ini merupakan gambaran garis besar hierarki organisasi. Detail staff pengurus dapat dilihat di halaman <a href="pengurus.html">Kepengurusan</a>.</p>
+                </div>
+            </div>
+        </section>
+        
+    </main>
+
+    <!-- FOOTER: Replikasi Footer -->
+    <footer id="footer">
+        <div class="container-footer">
+            <div class="footer-info">
+                <h4>PERMAI-AYU</h4>
+                <p>Organisasi Pelajar Indonesia<br>
+                Jl. Jambu No. 37 Pisangan, Ciputat Timur, Tangerang Selatan - Kode Pos 15419<br>
+                <strong>Email:</strong> teknogenx@gmail.com<br>
+                </p>
+            </div>
+            <div class="footer-links">
+                <h4>Link Cepat</h4>
+                <ul>
+                    <li><a href="about.html">Tentang Kami</a></li>
+                    <li><a href="struktur.html">Struktur Organisasi</a></li>
+                    <li><a href="contact.html">Hubungi Kami</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="copyright">
+            &copy; Copyright 2025 PERMAI-AYU. All Rights Reserved.
+        </div>
+    </footer>
+
+    <a href="#" id="back-to-top" class="back-to-top">↑</a>
+
+    <!-- Link ke file JavaScript terpisah (script.js) -->
+    <script src="JS/script.js"></script>
+
+    <!-- Placeholder untuk library eksternal (AOS) -->
+    <!-- <script src="assets/vendor/aos/aos.js"></script> -->
+</body>
+</html>

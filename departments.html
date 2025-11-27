@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Departemen | PERMAI-AYU</title>
+    <!-- Font Inter dari Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="CSS/style.css">
+    <!-- Placeholder untuk library AOS -->
+    <!-- <link rel="stylesheet" href="assets/vendor/aos/aos.css"> -->
+    <style>
+        /* CSS Tambahan untuk Departemen */
+        .department-card {
+            background: #fff;
+            padding: 30px;
+            border-radius: var(--border-radius);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+            text-align: center;
+            transition: all 0.3s;
+            height: 100%; /* Penting untuk grid layout */
+        }
+        
+        .department-card:hover {
+            transform: translateY(-5px);
+            border-top: 5px solid var(--primary-color);
+            padding-top: 25px;
+        }
+
+        .department-card .dept-icon {
+            font-size: 3rem;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+            display: inline-block;
+        }
+
+        .department-card h4 {
+            font-size: 1.4rem;
+            margin-bottom: 10px;
+        }
+        
+        .department-card p {
+            font-size: 0.95rem;
+            color: #555;
+            margin-bottom: 15px;
+        }
+
+        .dept-grid-full {
+            display: grid; /* Kriteria UTS: CSS Grid */
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- HEADER: Replikasi Header -->
+    <header id="header">
+        <div class="container-header">
+            <h1 class="logo"><a href="index.html">PERMAI-AYU</a></h1>
+            
+            <nav id="navbar" class="navbar">
+                <ul>
+                    <li><a href="index.html">Beranda</a></li>
+                    <li><a href="about.html">Tentang</a></li>
+                    <li><a href="struktur.html">Struktur</a></li>
+                    <li><a href="departments.html" class="active">Departemen</a></li>
+                    <li><a href="kegiatan.html">Kegiatan</a></li>
+                    <li><a href="contact.html">Kontak</a></li>
+                </ul>
+                <button class="mobile-nav-toggle" aria-label="Toggle Navigation">☰</button>
+            </nav>
+        </div>
+    </header>
+
+    <!-- MAIN: Konten Utama Halaman Departemen -->
+    <main id="main">
+        
+        <section id="page-hero" class="bg-light section-padding" style="padding-top: 100px; padding-bottom: 30px;">
+            <div class="container-content text-center" data-aos="fade-down">
+                <h1>Daftar Departemen PERMAI-AYU</h1>
+                <p class="section-subtitle">Struktur resmi yang menjalankan program kerja organisasi.</p>
+            </div>
+        </section>
+
+        <!-- SECTION 2: Daftar Departemen Lengkap (Menggunakan CSS Grid) -->
+        <section id="departments-list" class="section-padding">
+            <div class="container-content">
+                <div class="dept-grid-full">
+                    
+                    <!-- Departemen 1: Manajemen & Kaderisasi -->
+                    <article class="department-card" data-aos="fade-up" data-aos-delay="100">
+                        <i class="dept-icon">👥</i>
+                        <h4>Manajemen & Kaderisasi</h4>
+                        <p>Bertanggung jawab atas pengembangan sumber daya manusia dan proses kaderisasi untuk mencetak generasi penerus organisasi yang berkualitas.</p>
+                        <a href="pengurus.html" class="link-more">Lihat Pengurus →</a>
+                    </article>
+                    
+                    <!-- Departemen 2: Jaringan dan Kolaborasi -->
+                    <article class="department-card" data-aos="fade-up" data-aos-delay="200">
+                        <i class="dept-icon">🌐</i>
+                        <h4>Jaringan dan Kolaborasi</h4>
+                        <p>Membangun dan menjaga hubungan dengan pihak eksternal, serta membuka peluang kerjasama yang strategis untuk kemajuan organisasi.</p>
+                        <a href="pengurus.html" class="link-more">Lihat Pengurus →</a>
+                    </article>
+
+                    <!-- Departemen 3: Kedaerahan -->
+                    <article class="department-card" data-aos="fade-up" data-aos-delay="300">
+                        <i class="dept-icon">🗺️</i>
+                        <h4>Kedaerahan</h4>
+                        <p>Fokus pada isu-isu dan potensi di daerah Indramayu, serta menjadi jembatan antara mahasiswa di perantauan dengan kampung halaman.</p>
+                        <a href="pengurus.html" class="link-more">Lihat Pengurus →</a>
+                    </article>
+
+                    <!-- Departemen 4: Kajian Strategis dan Advokasi -->
+                    <article class="department-card" data-aos="fade-up" data-aos-delay="400">
+                        <i class="dept-icon">⚖️</i>
+                        <h4>Kajian Strategis dan Advokasi</h4>
+                        <p>Melakukan analisis mendalam terhadap isu-isu penting dan memperjuangkan aspirasi mahasiswa serta masyarakat melalui advokasi.</p>
+                        <a href="pengurus.html" class="link-more">Lihat Pengurus →</a>
+                    </article>
+                    
+                    <!-- Departemen 5: Kewirausahaan -->
+                    <article class="department-card" data-aos="fade-up" data-aos-delay="500">
+                        <i class="dept-icon">💰</i>
+                        <h4>Kewirausahaan</h4>
+                        <p>Mendorong semangat wirausaha di kalangan anggota dan mengelola unit-unit bisnis untuk kemandirian finansial organisasi.</p>
+                        <a href="pengurus.html" class="link-more">Lihat Pengurus →</a>
+                    </article>
+                    
+                    <!-- Departemen 6: Komunikasi dan Digitalisasi -->
+                    <article class="department-card" data-aos="fade-up" data-aos-delay="600">
+                        <i class="dept-icon">📱</i>
+                        <h4>Komunikasi dan Digitalisasi</h4>
+                        <p>Mengelola arus informasi, publikasi, dan citra organisasi di berbagai platform media digital untuk menjangkau audiens yang lebih luas.</p>
+                        <a href="pengurus.html" class="link-more">Lihat Pengurus →</a>
+                    </article>
+
+                    <!-- Departemen 7: Olahraga, Seni dan Budaya -->
+                    <article class="department-card" data-aos="fade-up" data-aos-delay="700">
+                        <i class="dept-icon">🎨</i>
+                        <h4>Olahraga, Seni dan Budaya</h4>
+                        <p>Mewadahi dan mengembangkan minat serta bakat anggota di bidang olahraga, kesenian, dan pelestarian budaya daerah.</p>
+                        <a href="pengurus.html" class="link-more">Lihat Pengurus →</a>
+                    </article>
+
+                    <!-- Departemen 8: Asrama -->
+                    <article class="department-card" data-aos="fade-up" data-aos-delay="800">
+                        <i class="dept-icon">🏠</i>
+                        <h4>Asrama</h4>
+                        <p>Bertanggung jawab atas pengelolaan, kenyamanan, dan program-program pembinaan bagi anggota yang tinggal di asrama.</p>
+                        <a href="pengurus.html" class="link-more">Lihat Pengurus →</a>
+                    </article>
+
+                </div>
+            </div>
+        </section>
+        
+    </main>
+
+    <!-- FOOTER: Replikasi Footer -->
+    <footer id="footer">
+        <div class="container-footer">
+            <div class="footer-info">
+                <h4>PERMAI-AYU</h4>
+                <p>Persatuan Mahasiswa Indramayu DKI Jakarta<br>
+                Jl. Jambu No. 37 Pisangan, Ciputat Timur, Tangerang Selatan - Kode Pos 15419<br>
+                <strong>Email:</strong> teknogenx@gmail.com<br>
+                </p>
+            </div>
+            <div class="footer-links">
+                <h4>Link Cepat</h4>
+                <ul>
+                    <li><a href="about.html">Tentang Kami</a></li>
+                    <li><a href="struktur.html">Struktur Organisasi</a></li>
+                    <li><a href="contact.html">Hubungi Kami</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="copyright">
+            &copy; Copyright 2025 PERMAI-AYU. All Rights Reserved.
+        </div>
+    </footer>
+
+    <a href="#" id="back-to-top" class="back-to-top">↑</a>
+
+    <!-- Link ke file JavaScript terpisah (script.js) -->
+    <script src="JS/script.js"></script>
+    <!-- <script src="assets/vendor/aos/aos.js"></script> -->
+</body>
+</html>

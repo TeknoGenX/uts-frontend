@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hubungi Kami | PERMAI-AYU</title>
+    <!-- Font Inter dari Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="CSS/style.css">
+    <!-- Placeholder untuk library AOS - Sesuai instruksi 9 & 10 -->
+    <!-- <link rel="stylesheet" href="assets/vendor/aos/aos.css"> -->
+    <style>
+        /* CSS Khusus untuk Halaman Kontak */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 40px;
+        }
+
+        .contact-info-card {
+            background-color: var(--background-light);
+            padding: 30px;
+            border-radius: var(--border-radius);
+            height: 100%;
+        }
+
+        .contact-form {
+            background: #fff;
+            padding: 30px;
+            border-radius: var(--border-radius);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+        }
+
+        .form-control, select.form-control {
+            width: 100%;
+            padding: 10px 12px;
+            border: 1px solid #ced4da;
+            border-radius: 4px;
+            transition: border-color 0.3s;
+        }
+
+        .form-control:focus, select.form-control:focus {
+            border-color: var(--primary-color);
+            outline: none;
+            box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+        }
+
+        textarea.form-control {
+            min-height: 150px;
+            resize: vertical;
+        }
+
+        .radio-group, .checkbox-group {
+            margin-top: 5px;
+        }
+
+        .radio-group label, .checkbox-group label {
+            display: inline-block;
+            margin-right: 15px;
+            font-weight: 400;
+        }
+
+        .contact-form button {
+            background-color: var(--primary-color);
+            color: #fff;
+            border: none;
+            padding: 12px 30px;
+            border-radius: 50px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: background-color 0.3s;
+        }
+
+        .contact-form button:hover {
+            background-color: #0056b3;
+        }
+
+        /* Feedback/Validation Styling */
+        .feedback-message {
+            padding: 10px 15px;
+            margin-top: 15px;
+            border-radius: 4px;
+            font-weight: 500;
+            display: none; /* Disembunyikan secara default */
+        }
+
+        .feedback-message.success {
+            background-color: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+        }
+
+        .feedback-message.error {
+            background-color: #f8d7da;
+            color: #721c24;
+            border: 1px solid #f5c6cb;
+        }
+        
+        /* Media Query untuk Mobile */
+        @media (max-width: 992px) {
+            .contact-grid {
+                grid-template-columns: 1fr; /* Kolom tunggal di layar kecil */
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- HEADER: Replikasi Header -->
+    <header id="header">
+        <div class="container-header">
+            <h1 class="logo"><a href="index.html">PERMAI-AYU</a></h1>
+            
+            <nav id="navbar" class="navbar">
+                <ul>
+                    <li><a href="index.html">Beranda</a></li>
+                    <li><a href="about.html">Tentang</a></li>
+                    <li><a href="struktur.html">Struktur</a></li>
+                    <li><a href="departments.html">Departemen</a></li>
+                    <li><a href="kegiatan.html">Kegiatan</a></li>
+                    <li><a href="contact.html" class="active">Kontak</a></li>
+                </ul>
+                <button class="mobile-nav-toggle" aria-label="Toggle Navigation">☰</button>
+            </nav>
+        </div>
+    </header>
+
+    <!-- MAIN: Konten Utama Halaman Kontak -->
+    <main id="main">
+        
+        <!-- SECTION 1: Page Hero -->
+        <section id="page-hero" class="bg-light section-padding" style="padding-top: 100px; padding-bottom: 30px;">
+            <div class="container-content text-center" data-aos="fade-down">
+                <h1>Hubungi Kami</h1>
+                <p class="section-subtitle">Sampaikan kritik, saran, atau pertanyaan Anda.</p>
+            </div>
+        </section>
+
+        <!-- SECTION 2: Formulir dan Informasi Kontak -->
+        <section id="contact" class="section-padding">
+            <div class="container-content contact-grid">
+                
+                <!-- Kolom 1: Informasi Kontak & Peta -->
+                <div class="contact-info-card" data-aos="fade-right">
+                    <h3>Informasi Kantor Pusat</h3>
+                    <p class="mb-4">Kami akan senang mendengar masukan dari Anda.</p>
+                    
+                    <div class="info-item mb-4">
+                        <h4>Alamat:</h4>
+                        <p>Jl. Jambu No. 37 Pisangan, Ciputat Timur, Tangerang Selatan - Kode Pos 15419</p>
+                    </div>
+
+                    <div class="info-item mb-4">
+                        <h4>Email:</h4>
+                        <p>teknogenx@gmail.com</p>
+                    </div>
+                    
+                    <div class="info-item mb-4">
+                        <h4>Telepon:</h4>
+                        <p>083839336561</p>
+                    </div>
+                    
+                    <!-- Placeholder Peta -->
+                    <div class="map-container" style="height: 250px; background-color: #e9ecef; border-radius: 8px; display: flex; align-items: center; justify-content: center;">
+                        <p>Placeholder Peta Google Maps (Alamat Kantor)</p>
+                    </div>
+                </div>
+
+                <!-- Kolom 2: Formulir Kontak -->
+                <div class="contact-form" data-aos="fade-left">
+                    <h3>Kirim Pesan</h3>
+                    <!-- FORM: Kriteria UTS (Minimal 1 Form, menggunakan beberapa jenis input) -->
+                    <form id="contactForm" action="#" method="post"> 
+                        
+                        <div class="form-group">
+                            <label for="nama">Nama Lengkap *</label>
+                            <input type="text" class="form-control" id="nama" name="nama" placeholder="Cth: Budi Santoso" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email">Alamat Email *</label>
+                            <input type="email" class="form-control" id="email" name="email" placeholder="Cth: email@contoh.com" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="subjek">Subjek Pesan</label>
+                            <select class="form-control" id="subjek" name="subjek">
+                                <option value="">-- Pilih Subjek --</option>
+                                <option value="kritik">Kritik & Saran</option>
+                                <option value="pertanyaan">Pertanyaan Umum</option>
+                                <option value="kerjasama">Permintaan Kerjasama</option>
+                                <option value="lain">Lain-lain</option>
+                            </select>
+                        </div>
+                        
+                        <!-- Jenis Input: Radio Button -->
+                        <div class="form-group">
+                            <label>Prioritas Tanggapan *</label>
+                            <div class="radio-group">
+                                <input type="radio" id="p_tinggi" name="prioritas" value="tinggi" required>
+                                <label for="p_tinggi">Tinggi</label>
+                                <input type="radio" id="p_normal" name="prioritas" value="normal">
+                                <label for="p_normal">Normal</label>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="pesan">Pesan Anda *</label>
+                            <textarea class="form-control" id="pesan" name="pesan" rows="5" required></textarea>
+                        </div>
+
+                        <!-- Jenis Input: Checkbox -->
+                        <div class="form-group">
+                            <div class="checkbox-group">
+                                <input type="checkbox" id="privacy" name="privacy" required>
+                                <label for="privacy">Saya setuju data ini dikumpulkan sesuai kebijakan privasi.</label>
+                            </div>
+                        </div>
+
+                        <!-- Feedback Message Area -->
+                        <div id="feedbackMessage" class="feedback-message"></div>
+
+                        <button type="submit" id="submitButton">Kirim Pesan</button>
+                    </form>
+                </div>
+
+            </div>
+        </section>
+        
+    </main>
+
+    <!-- FOOTER: Replikasi Footer -->
+    <footer id="footer">
+        <div class="container-footer">
+            <div class="footer-info">
+                <h4>PERMAI-AYU</h4>
+                <p>Organisasi Pelajar Indonesia<br>
+                Jl. Pendidikan No. 100, Kota Pelajar<br>
+                <strong>Email:</strong> info@permai-ayu.org<br>
+                </p>
+            </div>
+            <div class="footer-links">
+                <h4>Link Cepat</h4>
+                <ul>
+                    <li><a href="about.html">Tentang Kami</a></li>
+                    <li><a href="struktur.html">Struktur Organisasi</a></li>
+                    <li><a href="contact.html">Hubungi Kami</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="copyright">
+            &copy; Copyright 2025 PERMAI-AYU. All Rights Reserved.
+        </div>
+    </footer>
+
+    <a href="#" id="back-to-top" class="back-to-top">↑</a>
+
+    <!-- Link ke file JavaScript terpisah (main.js) -->
+    <script src="assets/js/main.js"></script>
+    
+    <!-- PENTING: Tambahkan script logic form di sini, atau di main.js -->
+    <script>
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const form = e.target;
+            const feedbackElement = document.getElementById('feedbackMessage');
+            let isValid = true;
+            let errorMessage = '';
+
+            // Reset feedback
+            feedbackElement.style.display = 'none';
+            feedbackElement.className = 'feedback-message';
+            
+            // Kriteria UTS: Validasi sederhana (field wajib diisi)
+            const nama = form.elements['nama'].value.trim();
+            const email = form.elements['email'].value.trim();
+            const pesan = form.elements['pesan'].value.trim();
+            const privacyChecked = form.elements['privacy'].checked;
+            const prioritasSelected = form.elements['prioritas'].value; // Check if any radio is selected
+            
+            if (nama === '' || email === '' || pesan === '' || prioritasSelected === '') {
+                errorMessage = 'Semua kolom bertanda bintang (*) wajib diisi.';
+                isValid = false;
+            } else if (!email.includes('@') || !email.includes('.')) { // Validasi Email Sederhana
+                errorMessage = 'Format email tidak valid.';
+                isValid = false;
+            } else if (pesan.length < 10) { // Validasi Panjang Pesan
+                errorMessage = 'Pesan terlalu pendek (minimal 10 karakter).';
+                isValid = false;
+            } else if (!privacyChecked) {
+                 errorMessage = 'Anda harus menyetujui kebijakan privasi.';
+                 isValid = false;
+            }
+            
+            // Kriteria UTS: Feedback ke pengguna
+            if (isValid) {
+                // Simulasi pengiriman data
+                console.log("Data Terkirim:", {
+                    nama: nama,
+                    email: email,
+                    subjek: form.elements['subjek'].value,
+                    prioritas: prioritasSelected,
+                    pesan: pesan
+                });
+                
+                feedbackElement.textContent = 'Pesan Anda berhasil dikirim! Kami akan segera merespons.';
+                feedbackElement.classList.add('success');
+                feedbackElement.style.display = 'block';
+                form.reset(); // Kosongkan form setelah sukses
+            } else {
+                feedbackElement.textContent = 'Gagal mengirim pesan: ' + errorMessage;
+                feedbackElement.classList.add('error');
+                feedbackElement.style.display = 'block';
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kepengurusan | PERMAI-AYU</title>
+    <!-- Font Inter dari Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="CSS/style.css">
+    <!-- Placeholder untuk library AOS -->
+    <!-- <link rel="stylesheet" href="assets/vendor/aos/aos.css"> -->
+    <style>
+        /* CSS Tambahan untuk Pengurus */
+        .member-grid-full {
+            display: grid; /* Kriteria UTS: CSS Grid */
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+
+        .member-card {
+            text-align: center;
+            padding: 20px;
+            border-radius: var(--border-radius);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+            background: #fff;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s;
+        }
+
+        .member-card:hover {
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        .member-card-photo {
+            width: 150px;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 50%;
+            margin-bottom: 15px;
+            border: 4px solid var(--primary-color);
+            transition: transform 0.3s;
+        }
+        
+        .member-card:hover .member-card-photo {
+            transform: scale(1.05);
+        }
+
+        .member-card h4 {
+            font-size: 1.25rem;
+            margin-bottom: 5px;
+        }
+
+        .member-card span {
+            display: block;
+            color: var(--secondary-color);
+            font-size: 0.95rem;
+        }
+        
+        .departemen-title {
+            margin-top: 40px;
+            margin-bottom: 20px;
+            text-align: center;
+            font-size: 1.8rem;
+            color: var(--primary-color);
+            border-bottom: 2px solid var(--primary-color);
+            padding-bottom: 10px;
+            display: block;
+        }
+
+    </style>
+</head>
+<body>
+
+    <!-- HEADER: Replikasi Header -->
+    <header id="header">
+        <div class="container-header">
+            <h1 class="logo"><a href="index.html">PERMAI-AYU</a></h1>
+            
+            <nav id="navbar" class="navbar">
+                <ul>
+                    <li><a href="index.html">Beranda</a></li>
+                    <li><a href="about.html">Tentang</a></li>
+                    <li><a href="struktur.html">Struktur</a></li>
+                    <li><a href="departments.html">Departemen</a></li>
+                    <li><a href="pengurus.html" class="active">Kepengurusan</a></li>
+                    <li><a href="kegiatan.html">Kegiatan</a></li>
+                    <li><a href="contact.html">Kontak</a></li>
+                </ul>
+                <button class="mobile-nav-toggle" aria-label="Toggle Navigation">☰</button>
+            </nav>
+        </div>
+    </header>
+
+    <!-- MAIN: Konten Utama Halaman Pengurus -->
+    <main id="main">
+    
+        <section id="page-hero" class="bg-light section-padding" style="padding-top: 100px; padding-bottom: 30px;">
+            <div class="container-content text-center" data-aos="fade-down">
+                <h1>Daftar Pengurus Periode 2024-2025</h1>
+                <p class="section-subtitle">Mengenal wajah-wajah di balik PERMAI-AYU.</p>
+            </div>
+        </section>
+    
+        <!-- SECTION 2: Pengurus Inti -->
+        <section id="pengurus-inti" class="section-padding">
+            <div class="container-content">
+                <h2 class="section-title text-center" data-aos="fade-down">Badan Pengurus Harian</h2>
+                <p class="section-subtitle text-center">Mereka yang memegang kendali kepemimpinan harian.</p>
+    
+                <div class="member-grid-full">
+                    
+                    <article class="member-card" data-aos="zoom-in" data-aos-delay="100">
+                        <img src="https://placehold.co/150x150/A0522D/ffffff?text=Ketua" alt="Foto Muhamad Sam'un Mundzir" class="member-card-photo">
+                        <h4>Muhamad Sam'un Mundzir</h4>
+                        <span>Ketua Umum</span>
+                    </article>
+                    
+                    <article class="member-card" data-aos="zoom-in" data-aos-delay="200">
+                        <img src="https://placehold.co/150x150/2F4F4F/ffffff?text=Sekum" alt="Foto Alfin Auliya Nur" class="member-card-photo">
+                        <h4>Alfin Auliya Nur</h4>
+                        <span>Sekretaris Umum</span>
+                    </article>
+    
+                    <article class="member-card" data-aos="zoom-in" data-aos-delay="300">
+                        <img src="https://placehold.co/150x150/808000/ffffff?text=Bendum" alt="Foto Sami Al Hatimi" class="member-card-photo">
+                        <h4>Sami Al Hatimi</h4>
+                        <span>Bendahara Umum</span>
+                    </article>
+                    
+                </div>
+            </div>
+        </section>
+    
+        <!-- SECTION 3: Departemen -->
+        <section id="staff-dept" class="section-padding bg-light">
+            <div class="container-content">
+                <h2 class="section-title text-center" data-aos="fade-down">Departemen</h2>
+                <p class="section-subtitle text-center">Anggota aktif yang menjalankan program kerja teknis.</p>
+    
+                <!-- Manajemen & Kaderisasi -->
+                <h3 class="departemen-title">Manajemen & Kaderisasi</h3>
+                <div class="member-grid-full">
+                    <article class="member-card" data-aos="zoom-in"><img src="https://placehold.co/150x150/007bff/ffffff?text=MK" alt="Foto Nabil Afkari Pratama" class="member-card-photo"><h4>Nabil Afkari Pratama</h4><span>Ketua</span></article>
+                    <article class="member-card" data-aos="zoom-in"><img src="https://placehold.co/150x150/007bff/ffffff?text=MK" alt="Foto Nada Sofa Mariyah" class="member-card-photo"><h4>Nada Sofa Mariyah</h4><span>Sekretaris</span></article>
+                    <article class="member-card" data-aos="zoom-in"><img src="https://placehold.co/150x150/007bff/ffffff?text=MK" alt="Foto Emi Kurnaesih" class="member-card-photo"><h4>Emi Kurnaesih</h4><span>Anggota</span></article>
+                    <article class="member-card" data-aos="zoom-in"><img src="https://placehold.co/150x150/007bff/ffffff?text=MK" alt="Foto Abdullah Rahmadin Itsnan" class="member-card-photo"><h4>Abdullah Rahmadin Itsnan</h4><span>Anggota</span></article>
+                    <article class="member-card" data-aos="zoom-in"><img src="https://placehold.co/150x150/007bff/ffffff?text=MK" alt="Foto Rifky Maolana" class="member-card-photo"><h4>Rifky Maolana</h4><span>Anggota</span></article>
+                    <article class="member-card" data-aos="zoom-in"><img src="https://placehold.co/150x150/007bff/ffffff?text=MK" alt="Foto Saif Firmansyah" class="member-card-photo"><h4>Saif Firmansyah</h4><span>Anggota</span></article>
+                    <article class="member-card" data-aos="zoom-in"><img src="https://placehold.co/150x150/007bff/ffffff?text=MK" alt="Foto Farid Azizul Natsir" class="member-card-photo"><h4>Farid Azizul Natsir</h4><span>Anggota</span></article>
+                </div>
+    
+                <!-- Jaringan dan Kolaborasi -->
+                <h3 class="departemen-title">Jaringan dan Kolaborasi</h3>
+                <div class="member-grid-full">
+                    <article class="member-card" data-aos="zoom-in"><img src="https://placehold.co/150x150/28a745/ffffff?text=JK" alt="Foto Faridhuzzaman" class="member-card-photo"><h4>Faridhuzzaman</h4><span>Ketua</span></article>
+                    <article class="member-card" data-aos="zoom-in"><img src="https://placehold.co/150x150/28a745/ffffff?text=JK" alt="Foto Fawwaz Fadhil" class="member-card-photo"><h4>Fawwaz Fadhil</h4><span>Sekretaris</span></article>
+                    <article class="member-card" data-aos="zoom-in"><img src="https://placehold.co/150x150/28a745/ffffff?text=JK" alt="Foto Muhammad Abdillah Kampay" class="member-card-photo"><h4>Muhammad Abdillah Kampay</h4><span>Anggota</span></article>
+                    <article class="member-card" data-aos="zoom-in"><img src="https://placehold.co/150x150/28a745/ffffff?text=JK" alt="Foto Muchammad Fikri Bachtiyar" class="member-card-photo"><h4>Muchammad Fikri Bachtiyar</h4><span>Anggota</span></article>
+                    <article class="member-card" data-aos="zoom-in"><img src="https://placehold.co/150x150/28a745/ffffff?text=JK" alt="Foto Mufarid Pratama Pirdaus" class="member-card-photo"><h4>Mufarid Pratama Pirdaus</h4><span>Anggota</span></article>
+                    <article class="member-card" data-aos="zoom-in"><img src="https://placehold.co/150x150/28a745/ffffff?text=JK" alt="Foto Paldi Saepudin" class="member-card-photo"><h4>Paldi Saepudin</h4><span>Anggota</span></article>
+                    <article class="member-card" data-aos="zoom-in"><img src="https://placehold.co/150x150/28a745/ffffff?text=JK" alt="Foto Fahmi Febriyanto" class="member-card-photo"><h4>Fahmi Febriyanto</h4><span>Anggota</span></article>
+                </div>
+    
+                <!-- Kedaerahan -->
+                <h3 class="departemen-title">Kedaerahan</h3>
+                <div class="member-grid-full">
+                    <article class="member-card" data-aos="zoom-in"><img src="https://placehold.co/150x150/ffc107/333333?text=KD" alt="Foto Alvinur Sulton" class="member-card-photo"><h4>Alvinur Sulton</h4><span>Ketua</span></article>
+                    <article class="member-card" data-aos="zoom-in"><img src="https://placehold.co/150x150/ffc107/333333?text=KD" alt="Foto Afiany Amaliyah" class="member-card-photo"><h4>Afiany Amaliyah</h4><span>Sekretaris</span></article>
+                    <article class="member-card" data-aos="zoom-in"><img src="https://placehold.co/150x150/ffc107/333333?text=KD" alt="Foto Aulia Rahmawati" class="member-card-photo"><h4>Aulia Rahmawati</h4><span>Anggota</span></article>
+                    <article class="member-card" data-aos="zoom-in"><img src="https://placehold.co/150x150/ffc107/333333?text=KD" alt="Foto Muhammad Alwan" class="member-card-photo"><h4>Muhammad Alwan</h4><span>Anggota</span></article>
+                    <article class="member-card" data-aos="zoom-in"><img src="https://placehold.co/150x150/ffc107/333333?text=KD" alt="Foto Mayla Nurafifah" class="member-card-photo"><h4>Mayla Nurafifah</h4><span>Anggota</span></article>
+                    <article class="member-card" data-aos="zoom-in"><img src="https://placehold.co/150x150/ffc107/333333?text=KD" alt="Foto Miftah Jabalut Thoriq" class="member-card-photo"><h4>Miftah Jabalut Thoriq</h4><span>Anggota</span></article>
+                    <article class="member-card" data-aos="zoom-in"><img src="https://placehold.co/150x150/ffc107/333333?text=KD" alt="Foto Fachrul Ramadan" class="member-card-photo"><h4>Fachrul Ramadan</h4><span>Anggota</span></article>
+                </div>
+    
+                <!-- Kajian Strategis dan Advokasi -->
+                <h3 class="departemen-title">Kajian Strategis dan Advokasi</h3>
+                <div class="member-grid-full">
+                    <article class="member-card" data-aos="zoom-in"><img src="https://placehold.co/150x150/dc3545/ffffff?text=KSA" alt="Foto Ahmad Nabil Fayyadh" class="member-card-photo"><h4>Ahmad Nabil Fayyadh</h4><span>Ketua</span></article>
+                    <article class="member-card" data-aos="zoom-in"><img src="https://placehold.co/150x150/dc3545/ffffff?text=KSA" alt="Foto Mufidah Navi Adzkia" class="member-card-photo"><h4>Mufidah Navi Adzkia</h4><span>Sekretaris</span></article>
+                    <article class="member-card" data-aos="zoom-in"><img src="https://placehold.co/150x150/dc3545/ffffff?text=KSA" alt="Foto Anis Boedi Wijaya" class="member-card-photo"><h4>Anis Boedi Wijaya</h4><span>Anggota</span></article>
+                    <article class="member-card" data-aos="zoom-in"><img src="https://placehold.co/150x150/dc3545/ffffff?text=KSA" alt="Foto Desta Riyudha Rahman" class="member-card-photo"><h4>Desta Riyudha Rahman</h4><span>Anggota</span></article>
+                    <article class="member-card" data-aos="zoom-in"><img src="https://placehold.co/150x150/dc3545/ffffff?text=KSA" alt="Foto Umlina" class="member-card-photo"><h4>Umlina</h4><span>Anggota</span></article>
+                    <article class="member-card" data-aos="zoom-in"><img src="https://placehold.co/150x150/dc3545/ffffff?text=KSA" alt="Foto Ibdal Muhammad" class="member-card-photo"><h4>Ibdal Muhammad</h4><span>Anggota</span></article>
+                    <article class="member-card" data-aos="zoom-in"><img src="https://placehold.co/150x150/dc3545/ffffff?text=KSA" alt="Foto Affah Zakiatul Maula" class="member-card-photo"><h4>Affah Zakiatul Maula</h4><span>Anggota</span></article>
+                </div>
+    
+                <!-- Kewirausahaan -->
+                <h3 class="departemen-title">Kewirausahaan</h3>
+                <div class="member-grid-full">
+                    <article class="member-card" data-aos="zoom-in"><img src="https://placehold.co/150x150/6f42c1/ffffff?text=KW" alt="Foto Widia Sulistiani" class="member-card-photo"><h4>Widia Sulistiani</h4><span>Ketua</span></article>
+                    <article class="member-card" data-aos="zoom-in"><img src="https://placehold.co/150x150/6f42c1/ffffff?text=KW" alt="Foto Himmatul Ulya" class="member-card-photo"><h4>Himmatul Ulya</h4><span>Sekretaris</span></article>
+                    <article class="member-card" data-aos="zoom-in"><img src="https://placehold.co/150x150/6f42c1/ffffff?text=KW" alt="Foto Daniel Nadeak" class="member-card-photo"><h4>Daniel Nadeak</h4><span>Anggota</span></article>
+                    <article class="member-card" data-aos="zoom-in"><img src="https://placehold.co/150x150/6f42c1/ffffff?text=KW" alt="Foto Amirah Zahra A" class="member-card-photo"><h4>Amirah Zahra A</h4><span>Anggota</span></article>
+                    <article class="member-card" data-aos="zoom-in"><img src="https://placehold.co/150x150/6f42c1/ffffff?text=KW" alt="Foto Nadia Mahfrujah" class="member-card-photo"><h4>Nadia Mahfrujah</h4><span>Anggota</span></article>
+                    <article class="member-card" data-aos="zoom-in"><img src="https://placehold.co/150x150/6f42c1/ffffff?text=KW" alt="Foto Aliyah Salsabila" class="member-card-photo"><h4>Aliyah Salsabila</h4><span>Anggota</span></article>
+                    <article class="member-card" data-aos="zoom-in"><img src="https://placehold.co/150x150/6f42c1/ffffff?text=KW" alt="Foto Abiyyu Ade Pahlevi" class="member-card-photo"><h4>Abiyyu Ade Pahlevi</h4><span>Anggota</span></article>
+                    <article class="member-card" data-aos="zoom-in"><img src="https://placehold.co/150x150/6f42c1/ffffff?text=KW" alt="Foto Siti Aisah" class="member-card-photo"><h4>Siti Aisah</h4><span>Anggota</span></article>
+                </div>
+    
+                <!-- Komunikasi dan Digitalisasi -->
+                <h3 class="departemen-title">Komunikasi dan Digitalisasi</h3>
+                <div class="member-grid-full">
+                    <article class="member-card" data-aos="zoom-in"><img src="https://placehold.co/150x150/fd7e14/ffffff?text=KD" alt="Foto Dwi Diah Fadilah" class="member-card-photo"><h4>Dwi Diah Fadilah</h4><span>Ketua</span></article>
+                    <article class="member-card" data-aos="zoom-in"><img src="https://placehold.co/150x150/fd7e14/ffffff?text=KD" alt="Foto Astriyanti" class="member-card-photo"><h4>Astriyanti</h4><span>Sekretaris</span></article>
+                    <article class="member-card" data-aos="zoom-in"><img src="https://placehold.co/150x150/fd7e14/ffffff?text=KD" alt="Foto Andi Liani" class="member-card-photo"><h4>Andi Liani</h4><span>Anggota</span></article>
+                    <article class="member-card" data-aos="zoom-in"><img src="https://placehold.co/150x150/fd7e14/ffffff?text=KD" alt="Foto Himmah Nur'Izzah" class="member-card-photo"><h4>Himmah Nur'Izzah</h4><span>Anggota</span></article>
+                    <article class="member-card" data-aos="zoom-in"><img src="https://placehold.co/150x150/fd7e14/ffffff?text=KD" alt="Foto Dian" class="member-card-photo"><h4>Dian</h4><span>Anggota</span></article>
+                    <article class="member-card" data-aos="zoom-in"><img src="https://placehold.co/150x150/fd7e14/ffffff?text=KD" alt="Foto Ana Rodotuljanah" class="member-card-photo"><h4>Ana Rodotuljanah</h4><span>Anggota</span></article>
+                    <article class="member-card" data-aos="zoom-in"><img src="https://placehold.co/150x150/fd7e14/ffffff?text=KD" alt="Foto Lu'lu'ul Mahbubah" class="member-card-photo"><h4>Lu'lu'ul Mahbubah</h4><span>Anggota</span></article>
+                    <article class="member-card" data-aos="zoom-in"><img src="https://placehold.co/150x150/fd7e14/ffffff?text=KD" alt="Foto Aulia Hafidhatun Nisa" class="member-card-photo"><h4>Aulia Hafidhatun Nisa</h4><span>Anggota</span></article>
+                </div>
+    
+                <!-- Olahraga, Seni dan Budaya -->
+                <h3 class="departemen-title">Olahraga, Seni dan Budaya</h3>
+                <div class="member-grid-full">
+                    <article class="member-card" data-aos="zoom-in"><img src="https://placehold.co/150x150/20c997/ffffff?text=OSB" alt="Foto Sukma Gilang Prasetyo" class="member-card-photo"><h4>Sukma Gilang Prasetyo</h4><span>Ketua</span></article>
+                    <article class="member-card" data-aos="zoom-in"><img src="https://placehold.co/150x150/20c997/ffffff?text=OSB" alt="Foto Listi Shely Ataliana" class="member-card-photo"><h4>Listi Shely Ataliana</h4><span>Sekretaris</span></article>
+                    <article class="member-card" data-aos="zoom-in"><img src="https://placehold.co/150x150/20c997/ffffff?text=OSB" alt="Foto Syifatu Ulya" class="member-card-photo"><h4>Syifatu Ulya</h4><span>Ketua Biro Olahraga</span></article>
+                    <article class="member-card" data-aos="zoom-in"><img src="https://placehold.co/150x150/20c997/ffffff?text=OSB" alt="Foto Abiansyah Ghani Almahfudzi" class="member-card-photo"><h4>Abiansyah Ghani Almahfudzi</h4><span>Wakil Biro Olahraga</span></article>
+                    <article class="member-card" data-aos="zoom-in"><img src="https://placehold.co/150x150/20c997/ffffff?text=OSB" alt="Foto Farhan Syahrul Anam" class="member-card-photo"><h4>Farhan Syahrul Anam</h4><span>Ketua Biro Senbud</span></article>
+                    <article class="member-card" data-aos="zoom-in"><img src="https://placehold.co/150x150/20c997/ffffff?text=OSB" alt="Foto Saniyah Tussalamah Ramadhani" class="member-card-photo"><h4>Saniyah Tussalamah Ramadhani</h4><span>Wakil Biro Senbud</span></article>
+                    <article class="member-card" data-aos="zoom-in"><img src="https://placehold.co/150x150/20c997/ffffff?text=OSB" alt="Foto Ibnu Afan Dzunnurein" class="member-card-photo"><h4>Ibnu Afan Dzunnurein</h4><span>Staff Biro</span></article>
+                    <article class="member-card" data-aos="zoom-in"><img src="https://placehold.co/150x150/20c997/ffffff?text=OSB" alt="Foto Pandu Ikhsanu" class="member-card-photo"><h4>Pandu Ikhsanu</h4><span>Staff Biro</span></article>
+                </div>
+    
+                <!-- Asrama -->
+                <h3 class="departemen-title">Asrama</h3>
+                <div class="member-grid-full">
+                    <article class="member-card" data-aos="zoom-in"><img src="https://placehold.co/150x150/6610f2/ffffff?text=AS" alt="Foto Muhammad Fauzus Sa'id" class="member-card-photo"><h4>Muhammad Fauzus Sa'id</h4><span>Ketua</span></article>
+                    <article class="member-card" data-aos="zoom-in"><img src="https://placehold.co/150x150/6610f2/ffffff?text=AS" alt="Foto Ade Suratno" class="member-card-photo"><h4>Ade Suratno</h4><span>Ketua Biro Putra</span></article>
+                    <article class="member-card" data-aos="zoom-in"><img src="https://placehold.co/150x15.co/150x150/6610f2/ffffff?text=AS" alt="Foto Ziyad Haelani" class="member-card-photo"><h4>Ziyad Haelani</h4><span>Wakil Biro Putra</span></article>
+                    <article class="member-card" data-aos="zoom-in"><img src="https://placehold.co/150x150/6610f2/ffffff?text=AS" alt="Foto Dian Nur Chapsoh" class="member-card-photo"><h4>Dian Nur Chapsoh</h4><span>Ketua Biro Putri</span></article>
+                </div>
+    
+            </div>
+        </section>
+        
+    </main>
+
+    <!-- FOOTER: Replikasi Footer -->
+    <footer id="footer">
+        <div class="container-footer">
+            <div class="footer-info">
+                <h4>PERMAI-AYU</h4>
+                <p>Persatuan Mahasiswa Indramayu DKI Jakarta<br>
+                Jl. Jambu No. 37 Pisangan, Ciputat Timur, Tangerang Selatan - Kode Pos 15419<br>
+                <strong>Email:</strong> teknogenx@gmail.com<br>
+                </p>
+            </div>
+            <div class="footer-links">
+                <h4>Link Cepat</h4>
+                <ul>
+                    <li><a href="about.html">Tentang Kami</a></li>
+                    <li><a href="struktur.html">Struktur Organisasi</a></li>
+                    <li><a href="contact.html">Hubungi Kami</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="copyright">
+            &copy; Copyright 2025 PERMAI-AYU. All Rights Reserved.
+        </div>
+    </footer>
+
+    <a href="#" id="back-to-top" class="back-to-top">↑</a>
+
+    <!-- Link ke file JavaScript terpisah (script.js) -->
+    <script src="JS/script.js"></script>
+    <!-- <script src="assets/vendor/aos/aos.js"></script> -->
+</body>
+</html>

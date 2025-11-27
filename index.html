@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PERMAI-AYU (Persatuan Mahasiswa Indramayu DKI Jakarta) | Organisasi Pelajar Indonesia</title>
+    <!-- Font Inter dari Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="CSS/style.css">
+    <!-- Placeholder untuk library AOS & Swiper (Vendor/Plugin) - Sesuai instruksi 9 & 10 -->
+    <!-- <link rel="stylesheet" href="assets/vendor/aos/aos.css"> -->
+    <!-- <link rel="stylesheet" href="assets/vendor/swiper/swiper-bundle.min.css"> -->
+</head>
+<body>
+
+    <!-- HEADER: Elemen Semantik sesuai kriteria UTS -->
+    <header id="header">
+        <div class="container-header">
+            <h1 class="logo"><a href="index.html">PERMAI-AYU</a></h1>
+            
+            <!-- NAV: Elemen Semantik untuk Navigasi -->
+            <nav id="navbar" class="navbar">
+                <ul>
+                    <li><a href="index.html" class="active">Beranda</a></li>
+                    <li><a href="about.html">Tentang</a></li>
+                    <li><a href="struktur.html">Struktur</a></li>
+                    <li><a href="departments.html">Departemen</a></li>
+                    <li><a href="kegiatan.html">Kegiatan</a></li>
+                    <li><a href="contact.html">Kontak</a></li>
+                </ul>
+                <button class="mobile-nav-toggle" aria-label="Toggle Navigation">☰</button>
+            </nav>
+        </div>
+    </header>
+
+    <!-- MAIN: Konten Utama Halaman -->
+    <main id="main">
+        
+        <!-- SECTION 1: Hero Banner (Fungsi: Hero banner organisasi) -->
+        <section id="hero" class="hero-section">
+            <div class="container-hero">
+                <div class="hero-content">
+                    <!-- Data AOS akan diinisialisasi di JS, ini adalah placeholder atribut -->
+                    <h2 data-aos="fade-up">Selamat Datang di PERMAI-AYU DKI Jakarta</h2>
+                    <p data-aos="fade-up" data-aos-delay="100">Wadah kolaborasi, pengembangan diri, dan kontribusi nyata bagi Persatuan Mahasiswa Indramayu DKI Jakarta.</p>
+                    
+                    <!-- Tombol CTA menuju menu lain -->
+                    <div class="hero-cta" data-aos="fade-up" data-aos-delay="200">
+                        <a href="about.html" class="btn-primary">Pelajari Lebih Lanjut</a>
+                        <a href="departments.html" class="btn-secondary">Lihat Departemen Kami</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 2: Info Singkat PERMAI-AYU (Fungsi: Info singkat) -->
+        <section id="about-preview" class="section-padding">
+            <div class="container-grid">
+                <div class="about-content" data-aos="fade-right">
+                    <h3>Apa itu PERMAI-AYU?</h3>
+                    <p>PERMAI-AYU, singkatan dari Persatuan Mahasiswa Indramayu DKI Jakarta, adalah organisasi non-politik yang berfokus pada kekeluargaan, prestasi akademik, dan pengabdian masyarakat. Kami berkomitmen menciptakan lingkungan yang suportif dan inspiratif untuk semua anggotanya.</p>
+                    <ul>
+                        <li><i class="icon">✓</i> Visi: Menjadi wadah pemersatu mahasiswa Indonesia.</li>
+                        <li><i class="icon">✓</i> Misi: Mengembangkan potensi, mempererat silaturahmi.</li>
+                        <li><i class="icon">✓</i> Nilai: Harmonis, Aktif, Yakin, Unggul.</li>
+                    </ul>
+                </div>
+                <div class="about-image" data-aos="fade-left">
+                    <img src="https://placehold.co/600x400/007bff/ffffff?text=Ilustrasi+PERMAI-AYU" alt="Ilustrasi kegiatan mahasiswa" class="responsive-img">
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 3: Preview Departemen (Fungsi: Preview departemen) -->
+        <section id="dept-preview" class="section-padding bg-light">
+            <div class="container-content">
+                <h2 class="section-title" data-aos="fade-down">Departemen Kami</h2>
+                <p class="section-subtitle" data-aos="fade-down" data-aos-delay="100">Fokus pada bidang keilmuan, minat, dan bakat anggota.</p>
+                
+                <div class="departments-grid">
+                    <!-- 4 card preview departemen -->
+                    <article class="dept-card" data-aos="zoom-in" data-aos-delay="200">
+                        <i class="icon">👥</i>
+                        <h4>Manajemen & Kaderisasi</h4>
+                        <p>Mengembangkan sumber daya manusia dan proses kaderisasi internal.</p>
+                        <a href="departments.html" class="link-more">Detail →</a>
+                    </article>
+                    <article class="dept-card" data-aos="zoom-in" data-aos-delay="300">
+                        <i class="icon">🌐</i>
+                        <h4>Jaringan dan Kolaborasi</h4>
+                        <p>Membangun relasi strategis dengan pihak eksternal.</p>
+                        <a href="departments.html" class="link-more">Detail →</a>
+                    </article>
+                    <article class="dept-card" data-aos="zoom-in" data-aos-delay="400">
+                        <i class="icon">💰</i>
+                        <h4>Kewirausahaan</h4>
+                        <p>Mendorong kemandirian finansial melalui program wirausaha.</p>
+                        <a href="departments.html" class="link-more">Detail →</a>
+                    </article>
+                    <article class="dept-card" data-aos="zoom-in" data-aos-delay="500">
+                        <i class="icon">🎨</i>
+                        <h4>Olahraga, Seni dan Budaya</h4>
+                        <p>Mewadahi minat dan bakat anggota di bidang non-akademik.</p>
+                        <a href="departments.html" class="link-more">Detail →</a>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 4: Preview Kegiatan (Fungsi: Preview kegiatan) -->
+        <section id="activity-preview" class="section-padding">
+            <div class="container-content">
+                <h2 class="section-title" data-aos="fade-down">Kegiatan Terbaru</h2>
+                <p class="section-subtitle" data-aos="fade-down" data-aos-delay="100">Momen berharga yang telah kami laksanakan.</p>
+                
+                <div class="activity-grid">
+                    <!-- 3 card preview kegiatan -->
+                    <article class="activity-card" data-aos="fade-up" data-aos-delay="200">
+                        <img src="https://placehold.co/400x250/007BFF/ffffff?text=Seminar+Megathrust" alt="Seminar Nasional Megathrust Alert" class="responsive-img">
+                        <div class="card-body">
+                            <h4>Seminar Nasional "Megathrust Alert"</h4>
+                            <time datetime="2024-12-19">19 Desember 2024</time>
+                            <p>Langkah Preventif Demi Indonesia Siaga.</p>
+                        </div>
+                    </article>
+                    <article class="activity-card" data-aos="fade-up" data-aos-delay="300">
+                        <img src="https://placehold.co/400x250/28A745/ffffff?text=Seminar+Pendidikan" alt="Seminar & Talkshow Pendidikan" class="responsive-img">
+                        <div class="card-body">
+                            <h4>Seminar & Talkshow Pendidikan</h4>
+                            <time datetime="2023-02-26">26 Februari 2023</time>
+                            <p>Bersama Wujudkan Mimpi, Pemuda Indramayu Membangun Negeri.</p>
+                        </div>
+                    </article>
+                    <article class="activity-card" data-aos="fade-up" data-aos-delay="400">
+                        <img src="https://placehold.co/400x250/FFC107/333333?text=Hari+Santri" alt="Ngopi Yuk & Peringatan Hari Santri Nasional" class="responsive-img">
+                        <div class="card-body">
+                            <h4>Ngopi Yuk & Peringatan Hari Santri</h4>
+                            <time>Oktober</time>
+                            <p>Sarasehan dan ramah tamah bersama para alumni.</p>
+                        </div>
+                    </article>
+                </div>
+                <div class="text-center mt-8" data-aos="fade-up">
+                    <a href="kegiatan.html" class="btn-primary">Lihat Semua Kegiatan</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 5: Testimoni (Fungsi: Testimoni / slider (Swiper) ) -->
+        <section id="testimonials" class="section-padding bg-light">
+            <div class="container-content">
+                <h2 class="section-title" data-aos="fade-down">Kata Mereka Tentang Kami</h2>
+                <p class="section-subtitle" data-aos="fade-down" data-aos-delay="100">Testimoni dari anggota, alumni, dan mitra organisasi.</p>
+                
+                <!-- Swiper Wrapper (Placeholder) -->
+                <div class="swiper-container" data-aos="fade-up" data-aos-delay="200">
+                    <div class="swiper-wrapper">
+                        <!-- Slide 1 -->
+                        <div class="swiper-slide testimonial-card">
+                            <p>"PERMAI-AYU bukan hanya organisasi, tapi keluarga kedua. Saya belajar banyak tentang kepemimpinan dan manajemen waktu."</p>
+                            <div class="testimonial-footer">
+                                <img src="https://placehold.co/50x50/cccccc/000000?text=A1" alt="Foto Anggota 1" class="testimonial-img">
+                                <div>
+                                    <h5 class="testimonial-name">Putri Santosa</h5>
+                                    <span class="testimonial-role">Kepala Departemen (2024-2025)</span>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Slide 2 -->
+                        <div class="swiper-slide testimonial-card">
+                            <p>"Aktivitasnya selalu relevan dan profesional. Salut dengan komitmen PERMAI-AYU dalam mengembangkan mahasiswa."</p>
+                            <div class="testimonial-footer">
+                                <img src="https://placehold.co/50x50/cccccc/000000?text=A2" alt="Foto Anggota 2" class="testimonial-img">
+                                <div>
+                                    <h5 class="testimonial-name">Rizky Ananda</h5>
+                                    <span class="testimonial-role">Anggota Aktif (Akademik)</span>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Slide 3 -->
+                        <div class="swiper-slide testimonial-card">
+                            <p>"Kolaborasi kami berjalan lancar. Organisasi ini memiliki SDM yang sangat bertanggung jawab dan berintegritas tinggi."</p>
+                            <div class="testimonial-footer">
+                                <img src="https://placehold.co/50x50/cccccc/000000?text=M1" alt="Foto Mitra" class="testimonial-img">
+                                <div>
+                                    <h5 class="testimonial-name">Dr. Budi Hartono</h5>
+                                    <span class="testimonial-role">Mitra Kerjasama Universitas</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Tambahan jika Swiper aktif -->
+                    <!-- <div class="swiper-pagination"></div> -->
+                </div>
+            </div>
+        </section>
+        
+    </main>
+
+    <!-- FOOTER: Elemen Semantik -->
+    <footer id="footer">
+        <div class="container-footer">
+            <div class="footer-info">
+                <h4>PERMAI-AYU</h4>
+                <p>Organisasi Pelajar Indonesia<br>
+                Jl. Jambu No. 37 Pisangan, Ciputat Timur, Tangerang Selatan - Kode Pos 15419<br>
+                <strong>Email:</strong> teknogenx@gmail.com<br>
+                </p>
+            </div>
+            <div class="footer-links">
+                <h4>Link Cepat</h4>
+                <ul>
+                    <li><a href="about.html">Tentang Kami</a></li>
+                    <li><a href="struktur.html">Struktur Organisasi</a></li>
+                    <li><a href="contact.html">Hubungi Kami</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="copyright">
+            &copy; Copyright 2025 PERMAI-AYU. All Rights Reserved.
+        </div>
+    </footer>
+
+    <!-- Back to top button (sesuai instruksi 9) -->
+    <a href="#" id="back-to-top" class="back-to-top">↑</a>
+
+    <!-- Link ke file JavaScript terpisah (main.js) -->
+    <script src="../uts-frontend/JS/script.js"></script>
+
+    <!-- Placeholder untuk library eksternal (AOS & Swiper) - Sesuai instruksi 9 & 10 -->
+    <!-- <script src="assets/vendor/aos/aos.js"></script> -->
+    <!-- <script src="assets/vendor/swiper/swiper-bundle.min.js"></script> -->
+</body>
+</html>

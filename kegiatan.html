@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kegiatan & Galeri | PERMAI-AYU</title>
+    <!-- Font Inter dari Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="CSS/style.css">
+    <!-- Placeholder untuk library AOS, Isotope, Glightbox -->
+    <!-- <link rel="stylesheet" href="assets/vendor/aos/aos.css"> -->
+    <!-- <link rel="stylesheet" href="assets/vendor/glightbox/glightbox.min.css"> -->
+    <style>
+        /* CSS Tambahan untuk Kegiatan dan Galeri */
+        .kegiatan-timeline {
+            position: relative;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        /* Garis tengah timeline */
+        .kegiatan-timeline::after {
+            content: '';
+            position: absolute;
+            width: 3px;
+            background-color: #ccc;
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            margin-left: -1.5px;
+        }
+
+        .timeline-item {
+            padding: 10px 40px;
+            position: relative;
+            background-color: inherit;
+            width: 50%;
+        }
+
+        /* Titik lingkaran pada garis tengah */
+        .timeline-item::after {
+            content: '';
+            position: absolute;
+            width: 25px;
+            height: 25px;
+            right: -13px;
+            background-color: var(--primary-color);
+            border: 4px solid #fff;
+            top: 15px;
+            border-radius: 50%;
+            z-index: 1;
+        }
+
+        /* Item di sebelah kiri */
+        .left {
+            left: 0;
+        }
+
+        /* Item di sebelah kanan */
+        .right {
+            left: 50%;
+        }
+
+        /* Panah item kiri */
+        .left::before {
+            content: " ";
+            height: 0;
+            position: absolute;
+            top: 22px;
+            width: 0;
+            z-index: 1;
+            right: 30px;
+            border: medium solid #f8f9fa;
+            border-width: 10px 0 10px 10px;
+            border-color: transparent transparent transparent #f8f9fa;
+        }
+
+        /* Panah item kanan */
+        .right::before {
+            content: " ";
+            height: 0;
+            position: absolute;
+            top: 22px;
+            width: 0;
+            z-index: 1;
+            left: 30px;
+            border: medium solid #f8f9fa;
+            border-width: 10px 10px 10px 0;
+            border-color: transparent #f8f9fa transparent transparent;
+        }
+
+        /* Titik kanan */
+        .right::after {
+            left: -12px;
+        }
+
+        .timeline-content {
+            padding: 20px 30px;
+            background-color: #f8f9fa;
+            position: relative;
+            border-radius: 6px;
+        }
+
+        /* Galeri Isotope */
+        .galeri-filter {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .galeri-filter button {
+            background: none;
+            border: 1px solid var(--primary-color);
+            color: var(--primary-color);
+            padding: 8px 15px;
+            margin: 5px;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .galeri-filter button.active, .galeri-filter button:hover {
+            background-color: var(--primary-color);
+            color: #fff;
+        }
+
+        .galeri-grid {
+            display: grid; /* Kriteria UTS: CSS Grid */
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 15px;
+            /* Placeholder untuk Isotope/Masonry layout */
+        }
+
+        .galeri-item img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            border-radius: var(--border-radius);
+            transition: transform 0.3s;
+            cursor: pointer;
+        }
+
+        .galeri-item img:hover {
+            transform: scale(1.02);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+        
+        /* Responsif Timeline */
+        @media screen and (max-width: 768px) {
+            .kegiatan-timeline::after {
+                left: 31px; /* Pindahkan garis ke kiri */
+            }
+
+            .timeline-item {
+                width: 100%;
+                padding-left: 70px;
+                padding-right: 25px;
+                left: 0 !important;
+            }
+
+            .timeline-item::after {
+                left: 18px;
+            }
+
+            .timeline-item::before {
+                right: auto;
+                left: 60px;
+                border-color: transparent #f8f9fa transparent transparent;
+                border-width: 10px 10px 10px 0;
+            }
+
+            .right::after {
+                left: 18px; /* Pastikan titik kanan mengikuti garis */
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- HEADER: Replikasi Header -->
+    <header id="header">
+        <div class="container-header">
+            <h1 class="logo"><a href="index.html">PERMAI-AYU</a></h1>
+            
+            <nav id="navbar" class="navbar">
+                <ul>
+                    <li><a href="index.html">Beranda</a></li>
+                    <li><a href="about.html">Tentang</a></li>
+                    <li><a href="struktur.html">Struktur</a></li>
+                    <li><a href="departments.html">Departemen</a></li>
+                    <li><a href="pengurus.html">Kepengurusan</a></li>
+                    <li><a href="kegiatan.html" class="active">Kegiatan</a></li>
+                    <li><a href="contact.html">Kontak</a></li>
+                </ul>
+                <button class="mobile-nav-toggle" aria-label="Toggle Navigation">☰</button>
+            </nav>
+        </div>
+    </header>
+
+    <!-- MAIN: Konten Utama Halaman Kegiatan -->
+    <main id="main">
+        
+        <section id="page-hero" class="bg-light section-padding" style="padding-top: 100px; padding-bottom: 30px;">
+            <div class="container-content text-center" data-aos="fade-down">
+                <h1>Kegiatan & Dokumentasi Kami</h1>
+                <p class="section-subtitle">Aktivitas organisasi yang telah dan akan dilaksanakan.</p>
+            </div>
+        </section>
+
+        <!-- SECTION BARU: Form Tambah Kegiatan -->
+        <section id="tambah-kegiatan" class="section-padding bg-light" style="padding-bottom: 0;">
+            <div class="container-content" data-aos="fade-up">
+                <h2 class="section-title text-center">Tambah Kegiatan Baru</h2>
+                <p class="section-subtitle text-center">Tambahkan catatan kegiatan atau acara Anda ke dalam linimasa.</p>
+                
+                <form id="formKegiatan" style="max-width: 700px; margin: auto; background: #fff; padding: 30px; border-radius: var(--border-radius); box-shadow: 0 4px 20px rgba(0,0,0,0.05);">
+                    <div class="form-group" style="margin-bottom: 15px;">
+                        <label for="namaKegiatan" style="display: block; margin-bottom: 5px; font-weight: 600;">Nama Kegiatan *</label>
+                        <input type="text" class="form-control" id="namaKegiatan" name="namaKegiatan" required style="width: 100%; padding: 10px; border-radius: 4px; border: 1px solid #ccc;">
+                    </div>
+                    <div class="form-group" style="margin-bottom: 15px;">
+                        <label for="tanggalKegiatan" style="display: block; margin-bottom: 5px; font-weight: 600;">Tanggal Pelaksanaan *</label>
+                        <input type="date" class="form-control" id="tanggalKegiatan" name="tanggalKegiatan" required style="width: 100%; padding: 10px; border-radius: 4px; border: 1px solid #ccc;">
+                    </div>
+                    <div class="form-group" style="margin-bottom: 15px;">
+                        <label for="deskripsiKegiatan" style="display: block; margin-bottom: 5px; font-weight: 600;">Deskripsi Singkat</label>
+                        <textarea class="form-control" id="deskripsiKegiatan" name="deskripsiKegiatan" rows="4" style="width: 100%; padding: 10px; border-radius: 4px; border: 1px solid #ccc;"></textarea>
+                    </div>
+                    <div id="feedbackKegiatan" class="feedback-message" style="margin-bottom: 15px; padding: 10px; border-radius: 4px; display: none;"></div>
+                    <button type="submit" class="btn-primary" style="border: none; padding: 12px 30px; border-radius: 50px; cursor: pointer; font-weight: 600;">Tambahkan ke Linimasa</button>
+                </form>
+            </div>
+        </section>
+
+        <!-- SECTION 2: Timeline Kegiatan (Fungsi: Timeline event atau detail event) -->
+        <section id="kegiatan-timeline" class="section-padding">
+            <div class="container-content">
+                <h2 class="section-title text-center" data-aos="fade-down">Linimasa Kegiatan Utama</h2>
+                
+                <div class="kegiatan-timeline">
+                    
+                    <!-- Item Kiri (Acara Mendatang) -->
+                    <div class="timeline-item left" data-aos="fade-right">
+                        <div class="timeline-content" style="border: 2px solid var(--primary-color);">
+                            <h4>Januari 2025: Permai-Ayu Goes To School (PGTS)</h4>
+                            <small class="text-secondary">Akan dilaksanakan pada 12 Januari 2025</small>
+                            <p>Kegiatan pengenalan perguruan tinggi kepada siswa/i SMA/sederajat di Kabupaten Indramayu untuk meningkatkan kesadaran pentingnya Pendidikan Tinggi.</p>
+                        </div>
+                    </div>
+
+                    <!-- Item Kanan -->
+                    <div class="timeline-item right" data-aos="fade-left">
+                        <div class="timeline-content">
+                            <h4>Desember 2024: Seminar Nasional "Megathrust Alert"</h4>
+                            <small class="text-secondary">KSR PMI Unit UIN Syarif Hidayatullah</small>
+                            <p>Langkah Preventif Demi Indonesia Siaga.</p>
+                        </div>
+                    </div>
+
+                    <!-- Item Kiri -->
+                    <div class="timeline-item left" data-aos="fade-right">
+                        <div class="timeline-content">
+                            <h4>Februari 2023: Seminar & Talkshow Pendidikan</h4>
+                            <small class="text-secondary">PERMAI-AYU DKI Jakarta</small>
+                            <p>Bersama Wujudkan Mimpi, Pemuda Indramayu Membangun Negeri.</p>
+                        </div>
+                    </div>
+
+                    <!-- Item Kanan -->
+                    <div class="timeline-item right" data-aos="fade-left">
+                        <div class="timeline-content">
+                            <h4>Oktober (Tanggal tidak disebutkan): Ngopi Yuk & Peringatan Hari Santri Nasional</h4>
+                            <small class="text-secondary">PERMAI-AYU</small>
+                            <p>Sarasehan dan ramah tamah bersama para alumni.</p>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+        </section>
+
+        <!-- SECTION 3: Galeri Foto (Fungsi: Gallery kegiatan, Filter, Lightbox) -->
+        <section id="galeri-foto" class="section-padding bg-light">
+            <div class="container-content">
+                <h2 class="section-title text-center" data-aos="fade-down">Dokumentasi Visual</h2>
+                
+                <!-- Filter Foto (Placeholder untuk Isotope) -->
+                <div class="galeri-filter" data-aos="fade-up">
+                    <button class="active" data-filter="*">Semua</button>
+                    <button data-filter=".seminar">Seminar</button>
+                    <button data-filter=".peringatan">Peringatan</button>
+                </div>
+
+                <!-- Grid Galeri (Placeholder untuk Isotope Layout/Glightbox) -->
+                <div class="galeri-grid" id="galeri-container">
+                    
+                    <!-- Foto 1 (Seminar) -->
+                    <div class="galeri-item seminar" data-aos="zoom-in">
+                        <!-- Tambahkan class 'glightbox' jika library dimuat -->
+                        <img src="https://placehold.co/400x250/007BFF/ffffff?text=Seminar+Megathrust" alt="Seminar Nasional Megathrust Alert">
+                    </div>
+                    
+                    <!-- Foto 2 (Seminar) -->
+                    <div class="galeri-item seminar" data-aos="zoom-in" data-aos-delay="100">
+                        <img src="https://placehold.co/400x250/28A745/ffffff?text=Seminar+Pendidikan" alt="Seminar & Talkshow Pendidikan">
+                    </div>
+
+                    <!-- Foto 3 (Peringatan) -->
+                    <div class="galeri-item peringatan" data-aos="zoom-in" data-aos-delay="200">
+                        <img src="https://placehold.co/400x250/FFC107/333333?text=Hari+Santri" alt="Ngopi Yuk & Peringatan Hari Santri Nasional">
+                    </div>
+
+                    <!-- Foto 4 (Seminar) -->
+                    <div class="galeri-item seminar" data-aos="zoom-in" data-aos-delay="300">
+                        <img src="https://placehold.co/400x250/DC3545/ffffff?text=PGTS+2023" alt="PGTS 2023">
+                    </div>
+
+                    <!-- Foto 5 (Peringatan) -->
+                    <div class="galeri-item peringatan" data-aos="zoom-in" data-aos-delay="400">
+                        <img src="https://placehold.co/400x250/17A2B8/ffffff?text=Ngopi+Alumni" alt="Sarasehan dengan Alumni">
+                    </div>
+
+                    <!-- Foto 6 (Seminar) -->
+                    <div class="galeri-item seminar" data-aos="zoom-in" data-aos-delay="500">
+                        <img src="https://placehold.co/400x250/6C757D/ffffff?text=Diskusi+Pendidikan" alt="Diskusi Pendidikan">
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 4: Panitia PGTS 2025 -->
+        <section id="panitia-pgts" class="section-padding">
+            <div class="container-content" data-aos="fade-up">
+                <h2 class="section-title text-center">Susunan Panitia PERMAI-AYU GOES TO SCHOOL (PGTS) TAHUN 2025</h2>
+                <p class="section-subtitle text-center">Berdasarkan SK DEPARTEMEN KEDAERAHAN NOMOR: 01/SK-DKed/l/2025</p>
+
+                <div class="panitia-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; margin-top: 30px;">
+
+                    <div class="panitia-card" style="background: #f8f9fa; padding: 20px; border-radius: 8px;">
+                        <h4 style="border-bottom: 2px solid var(--primary-color); padding-bottom: 10px; margin-bottom: 15px;">Dewan Pelindung</h4>
+                        <ul style="list-style: none; padding-left: 0;">
+                            <li>Hj. Nina Agustina, S.H., M.H., C.R.A. (Bupati Indramayu)</li>
+                            <li>Drs. H. Haryono, M.Si. (Ketua DPRD Indramayu)</li>
+                            <li>AKBP Ari Setyawan Wibowo, S.H., S.I.K., M.Si. (Kapolres Indramayu)</li>
+                        </ul>
+                    </div>
+
+                    <div class="panitia-card" style="background: #f8f9fa; padding: 20px; border-radius: 8px;">
+                        <h4 style="border-bottom: 2px solid var(--primary-color); padding-bottom: 10px; margin-bottom: 15px;">Dewan Pembina</h4>
+                        <ul style="list-style: none; padding-left: 0;">
+                            <li>Sholehuddin, M.Pd.</li>
+                            <li>Imam Tamaim, S.S.</li>
+                            <li>H. Abdul Rohimi Ridwan, S.EI., M.M., M.A.</li>
+                            <li>As'ad Samsul Arifin</li>
+                            <li>Saefudin Zuhry, S.Sos.</li>
+                            <li>Jay Khresna, S.E.</li>
+                            <li>Ahmad Dasuki, S.Pd., M.Pd.</li>
+                            <li>Abidin Ghozali, S.Ag.</li>
+                            <li>Fahmi Ali Iqbal, S.S.</li>
+                        </ul>
+                    </div>
+
+                    <div class="panitia-card" style="background: #f8f9fa; padding: 20px; border-radius: 8px;">
+                        <h4 style="border-bottom: 2px solid var(--primary-color); padding-bottom: 10px; margin-bottom: 15px;">Penanggung Jawab</h4>
+                        <ul style="list-style: none; padding-left: 0;">
+                            <li>Muhammad Sam'un Mundzir (Ketua Umum)</li>
+                            <li>Alfin Auliya Nur (Sekretaris Umum)</li>
+                            <li>Sami Al Hatimi (Bendahara Umum)</li>
+                            <li>Alvinur Sulthon (Kepala Departemen Kedaerahan)</li>
+                            <li>Afiany Amaliyah (Sekretaris Departemen Kedaerahan)</li>
+                        </ul>
+                    </div>
+
+                    <div class="panitia-card" style="background: #f8f9fa; padding: 20px; border-radius: 8px;">
+                        <h4 style="border-bottom: 2px solid var(--primary-color); padding-bottom: 10px; margin-bottom: 15px;">Steering Committee (SC)</h4>
+                        <ul style="list-style: none; padding-left: 0;">
+                            <li><strong>Ketua:</strong> Afiany Amaliyah</li>
+                            <li><strong>Sekretaris:</strong> Mayla Nurafifah</li>
+                            <li><strong>Bendahara:</strong> Isye Roehani</li>
+                            <li><strong>Divisi Acara:</strong> Nabil Fayadh, Ade Suratno</li>
+                            <li><strong>Divisi Humas:</strong> Listy Sheli, Sukma Gilang P.</li>
+                        </ul>
+                    </div>
+
+                    <div class="panitia-card" style="background: #f8f9fa; padding: 20px; border-radius: 8px;">
+                        <h4 style="border-bottom: 2px solid var(--primary-color); padding-bottom: 10px; margin-bottom: 15px;">Organizing Committee (OC)</h4>
+                         <p><strong>Ketua:</strong> Miftah Thoriq<br>
+                            <strong>Sekretaris:</strong> Aliyah Salsabila<br>
+                            <strong>Bendahara:</strong> Nayla Tuzzahroh</p>
+                        
+                        <h5 style="margin-top: 20px;">Wilayah 1</h5>
+                        <ul style="list-style: none; padding-left: 0; font-size: 0.9em;">
+                            <li><strong>Koordinator:</strong> Abiyyu Ade Pahlevi</li>
+                            <li><strong>Divisi Acara:</strong> M. Fikri Bachtiyar, Desta Riyudha, Aulia Rahmawati, Aulia Hafidzatunnisa, Lu'lu'ul Mahbubah, Nabil Afkari, Himmatul Ulya, Ike Fatihaturrahmah</li>
+                            <li><strong>Divisi Humas:</strong> Muhammad Ibdal, Rifqy Maolana, Dian Nur Chapsoh, Mufarid Pratama, Anis Boedi, Ziad Haelani, Himmah Nur'Izzahana</li>
+                            <li><strong>Divisi Pubdekdok:</strong> Dian, Fawwaz Fadhil, Ana Rodotul Janah, Alit Rachmadini, Lintang Ambar, Siti Aisah, Emi Kurnaesih, Ramadhan Putra H.</li>
+                            <li><strong>Divisi Transkomod:</strong> Taufiqurrahman A., Riyan, Ade Riyan S., M. Syahril, Nawaf Nabil A.S., M. Fasikhullisan</li>
+                        </ul>
+
+                        <h5 style="margin-top: 20px;">Wilayah 2</h5>
+                        <ul style="list-style: none; padding-left: 0; font-size: 0.9em;">
+                            <li><strong>Koordinator:</strong> Abiansyah Ghani A.</li>
+                            <li><strong>Divisi Acara:</strong> Abdillah Kampay, Ari Indrawan, Mufidah Nafi, Farid Azizul Natsir, Umlina, Affah Zakiyatul, Nada Shofa, Shely Nurloka</li>
+                            <li><strong>Divisi Humas:</strong> Yusa, Fachrul Ramadhan, Aldi Nurdiansyah, Ahmad Juanda S., Astriyanti, Laura Hafifah, Mei Handayani, Fitroh Abi Sofiyan</li>
+                            <li><strong>Divisi Pubdekdok:</strong> Daniel Nadeak, Muhammad Alwan, Ibnu Afan D., Lidya Wati, Nunung Nuraeni, Amirah, Widia Sulistiani</li>
+                            <li><strong>Divisi Transkomod:</strong> Saif Firmansyah, Paldi Saepudin, Abdullah Rahmadin, Fahmi Febriyanto, Naufal Renando</li>
+                        </ul>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+        
+    </main>
+
+    <!-- FOOTER: Replikasi Footer -->
+    <footer id="footer">
+        <div class="container-footer">
+            <div class="footer-info">
+                <h4>PERMAI-AYU</h4>
+                <p>Organisasi Pelajar Indonesia<br>
+                Jl. Jambu No. 37 Pisangan, Ciputat Timur, Tangerang Selatan - Kode Pos 15419<br>
+                <strong>Email:</strong> teknogenx@gmail.com<br>
+                </p>
+            </div>
+            <div class="footer-links">
+                <h4>Link Cepat</h4>
+                <ul>
+                    <li><a href="about.html">Tentang Kami</a></li>
+                    <li><a href="struktur.html">Struktur Organisasi</a></li>
+                    <li><a href="contact.html">Hubungi Kami</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="copyright">
+            &copy; Copyright 2025 PERMAI-AYU. All Rights Reserved.
+        </div>
+    </footer>
+
+    <a href="#" id="back-to-top" class="back-to-top">↑</a>
+
+    <!-- Link ke file JavaScript terpisah (script.js) -->
+    <script src="JS/script.js"></script>
+
+    <!-- Placeholder untuk library eksternal (AOS, Isotope, Glightbox) -->
+    <!-- <script src="assets/vendor/aos/aos.js"></script> -->
+    <!-- <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script> -->
+    <!-- <script src="assets/vendor/glightbox/glightbox.min.js"></script> -->
+</body>
+</html>
