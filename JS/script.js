@@ -247,11 +247,19 @@ window.onload = function() {
     handleKegiatanForm();
     handleContactForm();
 
-    // 4. Inisialisasi Library
-    initAOS();
-    initSwiper();
-    initGlightbox();
-    initIsotope();
+    // 4. Inisialisasi Library secara kondisional
+    if (typeof AOS !== 'undefined') {
+        initAOS();
+    }
+    if (typeof Swiper !== 'undefined') {
+        initSwiper();
+    }
+    if (typeof GLightbox !== 'undefined') {
+        initGlightbox();
+    }
+    if (typeof Isotope !== 'undefined') {
+        initIsotope();
+    }
 
 
     // 5. Back to Top Click Handling
